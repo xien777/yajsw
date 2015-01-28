@@ -928,8 +928,8 @@ public class PosixProcess extends AbstractProcess
           {
             int code = status.getValue();
 
-            // Exited Normally
-            if ( WIFEXITED( code ) != 0 )
+            // Exited Normally, the low 8bit of code should be zero
+            if ( WIFEXITED( code ) == 0 )
               _exitCode = WEXITSTATUS( code );
             // Exited Ab-Normally
             else
