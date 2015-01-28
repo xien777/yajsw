@@ -63,7 +63,8 @@ public class WindowsJavaHome implements JavaHome
 	{
 		String java = null;
 		// String wrapperJava = _config.getString("wrapper.java.command");
-		if (wrapperJava != null && !wrapperJava.endsWith(".exe") && !wrapperJava.endsWith("}"))
+		if (wrapperJava != null && !wrapperJava.endsWith(".exe")
+				&& !wrapperJava.endsWith("\"")&& !wrapperJava.endsWith("}"))
 			wrapperJava = wrapperJava + ".exe";
 		try
 		{
