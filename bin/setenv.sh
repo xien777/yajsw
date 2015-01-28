@@ -25,10 +25,10 @@ export wrapper_home
 # return to original folder
 cd "$current"
 
-wrapper_jar="$wrapper_home"/wrapper.jar
+wrapper_jar="$wrapper_home"/lib/wrapper.jar
 export wrapper_jar
 
-wrapper_app_jar="$wrapper_home"/wrapperApp.jar
+wrapper_app_jar="$wrapper_home"/lib/wrapperApp.jar
 export wrapper_app_jar
 
 wrapper_java_sys_options=-Djna_tmpdir="$wrapper_home"/tmp

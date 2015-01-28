@@ -50,8 +50,7 @@ subprojects {
             "$coreLibsDir/groovy", 
             "$coreLibsDir/jna", 
             "$coreLibsDir/netty", 
-            "$coreLibsDir/regex", 
-            "$coreLibsDir/yajsw", 
+            "$coreLibsDir/regex",
             "$extendedLibsDir/quartz",
             "$extendedLibsDir/commons",
             "$extendedLibsDir/abeille",
@@ -62,7 +61,17 @@ subprojects {
     }
         
     
-    
+    clean << {
+        new File("../lib/${jar.baseName}.jar").delete()
+    }
+
+    build << {
+        copy {
+            from "build/libs/${jar.baseName}.jar"
+            into "../../lib"
+        }
+
+    }
     
     sourceCompatibility = 1.5
 }
